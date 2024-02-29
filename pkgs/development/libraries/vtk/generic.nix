@@ -87,6 +87,7 @@ in stdenv.mkDerivation {
     "-DCMAKE_INSTALL_BINDIR=bin"
     "-DVTK_VERSIONED_INSTALL=OFF"
   ] ++ optionals enableQt [
+    "-DVTK_QT_VERSION=5"
     "-DVTK_GROUP_ENABLE_Qt:STRING=YES"
   ]
     ++ optionals stdenv.isDarwin [ "-DOPENGL_INCLUDE_DIR=${OpenGL}/Library/Frameworks" ]
