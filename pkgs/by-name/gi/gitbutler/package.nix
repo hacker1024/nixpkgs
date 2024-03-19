@@ -17,7 +17,7 @@
 }:
 
 let
-  version = "0.10.11";
+  version = "0.10.24";
 in
 assert lib.assertMsg (version == gitbutler-ui.version) "The GitButler version does not match the GitButler UI version!";
 rustPlatform.buildRustPackage rec {
@@ -27,8 +27,9 @@ rustPlatform.buildRustPackage rec {
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
-      "tauri-plugin-context-menu-0.5.0" = "sha256-ftvGrJoQ4YHVYyrCBiiAQCQngM5Em15VRllqSgHHjxQ=";
-      "tauri-plugin-single-instance-0.0.0" = "sha256-xJd1kMCnSlTy/XwPWAtYPBsUFIW9AiBFgnmWQ3BpFeo=";
+      "tauri-plugin-log-0.0.0" = "sha256-uOPFpWz715jT8zl9E6cF+tIsthqv4x9qx/z3dJKVtbw=";
+      "tauri-plugin-context-menu-0.7.0" = "sha256-/4eWzZwQtvw+XYTUHPimB4qNAujkKixyo8WNbREAZg8=";
+      "tauri-plugin-single-instance-0.0.0" = "sha256-uOPFpWz715jT8zl9E6cF+tIsthqv4x9qx/z3dJKVtbw=";
     };
   };
 
