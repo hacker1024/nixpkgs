@@ -6,13 +6,13 @@
 
 mkYarnPackage rec {
   pname = "gitbutler-ui";
-  version = "0.10.24";
+  version = "0.10.27";
 
   src = fetchFromGitHub {
     owner = "gitbutlerapp";
     repo = "gitbutler";
     rev = "release/${version}";
-    hash = "sha256-09Ugtjs6AFGpLQQYxRBuNAvHomGfJQIEETl4jfpp7KU=";
+    hash = "sha256-Cbvb3mT4XuonB3oluaqXICP/5OMOHJBb5fceTJH1gDs=";
   };
 
   sourceRoot = "${src.name}/gitbutler-ui";
@@ -26,7 +26,7 @@ mkYarnPackage rec {
   yarnLock = ./yarn.lock;
   offlineCache = fetchYarnDeps {
     inherit yarnLock;
-    hash = "sha256-j/81555t6YOnragX8YSuQ3jNyNrX0KGV/dpP9Trv2hw=";
+    hash = "sha256-8OMSLkbsWWYAYxUQiLzhfI7zpFA2SoB2YFjk37LnaI0=";
   };
 
   preConfigure = ''
