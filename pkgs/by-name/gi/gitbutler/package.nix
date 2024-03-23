@@ -17,10 +17,8 @@
 }:
 
 let
-  version = "0.10.27";
-
   buildArgs = {
-    inherit (gitbutler-ui) version src;
+    inherit (gitbutler-ui) src version;
 
     cargoLock = {
       lockFile = ./Cargo.lock;
@@ -49,8 +47,7 @@ let
     '';
   });
 in
-assert lib.assertMsg (version == gitbutler-ui.version) "The GitButler version does not match the GitButler UI version!";
-rustPlatform.buildRustPackage (buildArgs // rec {
+rustPlatform.buildRustPackage (buildArgs // {
   pname = "gitbutler";
 
   nativeBuildInputs = [ copyDesktopItems wrapGAppsHook pkg-config perl jq moreutils ];
@@ -83,7 +80,7 @@ rustPlatform.buildRustPackage (buildArgs // rec {
   '';
 
   postInstall = ''
-    mv "$out"/bin/{gitbutler-app,'${meta.mainProgram}'}
+    mv "$out"/bin/{gitbutler-app,git-butler}
 
     for size in 128x128@2x 128x128 32x32; do
       install -DT "gitbutler-app/icons/$size.png" "$out/share/icons/hicolor/$size/apps/gitbutler.png"
@@ -96,8 +93,8 @@ rustPlatform.buildRustPackage (buildArgs // rec {
       desktopName = "GitButler";
       genericName = "Git client";
       categories = [ "Development" ];
-      comment = meta.description;
-      exec = meta.mainProgram;
+      comment = "Git client for simultaneous branches";
+      exec = "git-butler";
       icon = "gitbutler";
       terminal = false;
       type = "Application";
@@ -105,8 +102,6 @@ rustPlatform.buildRustPackage (buildArgs // rec {
   ];
 
   meta = gitbutler-ui.meta // {
-    description = "A Git client for simultaneous branches on top of your existing workflow.";
-    platforms = with lib.platforms; linux ++ darwin;
     mainProgram = "git-butler";
   };
 })

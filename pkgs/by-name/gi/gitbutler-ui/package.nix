@@ -53,14 +53,12 @@ mkYarnPackage rec {
 
   distPhase = "true";
 
-  meta = rec {
-    description = "The UI for GitButler.";
+  meta = {
+    description = "Git client for simultaneous branches on top of your existing workflow";
     homepage = "https://gitbutler.com";
-    downloadPage = homepage;
     changelog = "https://github.com/gitbutlerapp/gitbutler/releases/tag/release/${version}";
     license = lib.licenses.fsl-10-mit;
     maintainers = with lib.maintainers; [ hacker1024 ];
-    platforms = with lib.platforms; all;
-    sourceProvenance = with lib.sourceTypes; [ fromSource ];
+    platforms = lib.platforms.all;
   };
 }
