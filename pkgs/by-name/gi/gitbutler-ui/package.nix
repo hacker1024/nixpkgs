@@ -19,14 +19,17 @@ mkYarnPackage rec {
 
   # The package.json must use spaces instead of upstream's tabs to pass Nixpkgs
   # CI.
-  # To generate the Yarn lockfile, run `yarn install`.
-  # There is no way to import the tagged pnpm lockfile, so make sure to test the
-  # result thoughly as dependency versions may differ from the release.
+  #
+  # There is a branch of pnpm-lock-export that has been updated to work on
+  # gitbutler's pnpm-lock.yaml file. To generate an updated yarn.lock run:
+  #
+  #     $ nix run github:hallettj/pnpm-lock-export?ref=v0.5.0 -- --schema yarn.lock@v1
+  #
   packageJSON = ./package.json;
   yarnLock = ./yarn.lock;
   offlineCache = fetchYarnDeps {
     inherit yarnLock;
-    hash = "sha256-8OMSLkbsWWYAYxUQiLzhfI7zpFA2SoB2YFjk37LnaI0=";
+    hash = "sha256-ilU8t2jj7w41PyGazZvnKCvQ5EMeo4CsZL0hxNeXQ04=";
   };
 
   preConfigure = ''
