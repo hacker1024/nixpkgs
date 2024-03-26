@@ -6,13 +6,13 @@
 
 mkYarnPackage rec {
   pname = "gitbutler-ui";
-  version = "0.10.27";
+  version = "0.10.28";
 
   src = fetchFromGitHub {
     owner = "gitbutlerapp";
     repo = "gitbutler";
     rev = "release/${version}";
-    hash = "sha256-Cbvb3mT4XuonB3oluaqXICP/5OMOHJBb5fceTJH1gDs=";
+    hash = "sha256-j1ioqLcYxrBni8siO5DXLLPCQawAzzZgDumKizPhh1Y=";
   };
 
   sourceRoot = "${src.name}/gitbutler-ui";
