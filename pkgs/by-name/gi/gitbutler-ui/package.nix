@@ -6,27 +6,30 @@
 
 mkYarnPackage rec {
   pname = "gitbutler-ui";
-  version = "0.10.11";
+  version = "0.10.28";
 
   src = fetchFromGitHub {
     owner = "gitbutlerapp";
     repo = "gitbutler";
     rev = "release/${version}";
-    hash = "sha256-Y8LurSQKhjHX3RUiuOdHtPkZK5NKmx3eqQ5NGtnhMlY=";
+    hash = "sha256-j1ioqLcYxrBni8siO5DXLLPCQawAzzZgDumKizPhh1Y=";
   };
 
   sourceRoot = "${src.name}/gitbutler-ui";
 
   # The package.json must use spaces instead of upstream's tabs to pass Nixpkgs
   # CI.
-  # To generate the Yarn lockfile, run `yarn install`.
-  # There is no way to import the tagged pnpm lockfile, so make sure to test the
-  # result thoughly as dependency versions may differ from the release.
+  #
+  # There is a branch of pnpm-lock-export that has been updated to work on
+  # gitbutler's pnpm-lock.yaml file. To generate an updated yarn.lock run:
+  #
+  #     $ nix run github:hallettj/pnpm-lock-export?ref=v0.5.0 -- --schema yarn.lock@v1
+  #
   packageJSON = ./package.json;
   yarnLock = ./yarn.lock;
   offlineCache = fetchYarnDeps {
     inherit yarnLock;
-    hash = "sha256-rggtkfE6An8It0Rvgfk0J8JHpg0NbLiweRsz0nM/tzM=";
+    hash = "sha256-ilU8t2jj7w41PyGazZvnKCvQ5EMeo4CsZL0hxNeXQ04=";
   };
 
   preConfigure = ''
@@ -53,14 +56,12 @@ mkYarnPackage rec {
 
   distPhase = "true";
 
-  meta = rec {
-    description = "The UI for GitButler.";
+  meta = {
+    description = "Git client for simultaneous branches on top of your existing workflow";
     homepage = "https://gitbutler.com";
-    downloadPage = homepage;
     changelog = "https://github.com/gitbutlerapp/gitbutler/releases/tag/release/${version}";
     license = lib.licenses.fsl-10-mit;
     maintainers = with lib.maintainers; [ hacker1024 ];
-    platforms = with lib.platforms; all;
-    sourceProvenance = with lib.sourceTypes; [ fromSource ];
+    platforms = lib.platforms.all;
   };
 }
