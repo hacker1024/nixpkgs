@@ -1,112 +1,112 @@
 {
   "x86_64-linux": {
     "clion": {
-      "update-channel": "CLion RELEASE",
+      "update-channel": "CLion EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "4c7a0de431e93af748d1b695952809d4de43d9185d26c115c29aad683f511b8e",
-      "url": "https://download.jetbrains.com/cpp/CLion-2024.1.4.tar.gz",
-      "build_number": "241.18034.45"
+      "version": "2024.2 Release Candidate",
+      "sha256": "2074725768d0559028bf9b36abfe25d800eab7345bf75a640c2100aa833d111f",
+      "url": "https://download.jetbrains.com/cpp/CLion-242.20224.214.tar.gz",
+      "build_number": "242.20224.214"
     },
     "datagrip": {
-      "update-channel": "DataGrip RELEASE",
+      "update-channel": "DataGrip EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/datagrip/datagrip-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "16b918fc53004726454e0c08e2a77adbabae34c6852eb1c0612635d3667e73a5",
-      "url": "https://download.jetbrains.com/datagrip/datagrip-2024.1.4.tar.gz",
-      "build_number": "241.17890.24"
+      "version": "2024.2 RC",
+      "sha256": "c1f8d478e93da38135b62c292684c63b925f08601c1df8384ab1a00ef8d4387c",
+      "url": "https://download.jetbrains.com/datagrip/datagrip-242.20224.237.tar.gz",
+      "build_number": "242.20224.237"
     },
     "dataspell": {
-      "update-channel": "DataSpell RELEASE",
+      "update-channel": "DataSpell EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}.tar.gz",
-      "version": "2024.1.3",
-      "sha256": "aee5e18c44b9ed4e5c3ac13c0f2c8e5765105e7c12a8553e85ea8e64d5bb3d8c",
-      "url": "https://download.jetbrains.com/python/dataspell-2024.1.3.tar.gz",
-      "build_number": "241.18034.23"
+      "version": "2024.2 RC",
+      "sha256": "0acffd0d245fed574ce9912efa7329bed7370426542c670579a1ef15a7b4594b",
+      "url": "https://download.jetbrains.com/python/dataspell-242.20224.267.tar.gz",
+      "build_number": "242.20224.267"
     },
     "gateway": {
-      "update-channel": "Gateway RELEASE",
+      "update-channel": "Gateway EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-{version}.tar.gz",
-      "version": "2024.1.2",
-      "sha256": "d0ca5471d4e445ea931b25d1ee55cec0c40bb455de1aec861d5aa5ca0bbc176d",
-      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-2024.1.2.tar.gz",
-      "build_number": "241.17011.87"
+      "version": "2024.1.1 Release Candidate",
+      "sha256": "2fd861d6fc91815466fc1f3b2bbd2177e55f1ea2c086fa10cf979de773d9cc06",
+      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-241.15989.74.tar.gz",
+      "build_number": "241.15989.74"
     },
     "goland": {
-      "update-channel": "GoLand RELEASE",
+      "update-channel": "GoLand EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/go/goland-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "f982476c9d870f1f354ab15135094cbde5c25c851ec21f424d0cd24149a12be6",
-      "url": "https://download.jetbrains.com/go/goland-2024.1.4.tar.gz",
-      "build_number": "241.18034.61"
+      "version": "2024.2 RC",
+      "sha256": "6e93a667fd2ee2918a70dd74bca7434db64cd244be6fec951bcefe8e0ebb7345",
+      "url": "https://download.jetbrains.com/go/goland-242.20224.204.tar.gz",
+      "build_number": "242.20224.204"
     },
     "idea-community": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIC-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "7d5e4cdb5a7cb1c376ca66957481350571561edadc3f45e6fce422e14af0fc16",
-      "url": "https://download.jetbrains.com/idea/ideaIC-2024.1.4.tar.gz",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "c9ad4384b4b46adf5859f4df67c172103a6df4edece2ad489236a3c79bf92421",
+      "url": "https://download.jetbrains.com/idea/ideaIC-242.20224.159.tar.gz",
+      "build_number": "242.20224.159"
     },
     "idea-ultimate": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIU-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "cda20bbbc052c2b8e87ea8607235ee0f7b5775728e8648c0a603889a3efa685f",
-      "url": "https://download.jetbrains.com/idea/ideaIU-2024.1.4.tar.gz",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "cf1cf530bfe6b1d28114221953475b5d00d308e62c28828c80aa06ede20b3269",
+      "url": "https://download.jetbrains.com/idea/ideaIU-242.20224.159.tar.gz",
+      "build_number": "242.20224.159"
     },
     "mps": {
-      "update-channel": "MPS RELEASE",
+      "update-channel": "MPS EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/mps/{versionMajorMinor}/MPS-{version}.tar.gz",
-      "version": "2023.3.1",
+      "version": "2024.1-RC1 EAP",
       "sha256": "52a40fe05dd8d53a3f68faa7a6e40b73f72f80db5976d8ebd781955493a65fe1",
-      "url": "https://download.jetbrains.com/mps/2023.3.1/MPS-2023.3.1.tar.gz",
-      "build_number": "233.13135.1068"
+      "url": "https://download.jetbrains.com/mps/2024.1-RC1/MPS-241.18034.990.tar.gz",
+      "build_number": "241.18034.990"
     },
     "phpstorm": {
-      "update-channel": "PhpStorm RELEASE",
+      "update-channel": "PhpStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webide/PhpStorm-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "c6a9b57ecd8f588af512a1cba389738bd461531cab4f984ed9758abfdada822d",
-      "url": "https://download.jetbrains.com/webide/PhpStorm-2024.1.4.tar.gz",
-      "build_number": "241.18034.69",
+      "version": "2024.2 Release Candidate",
+      "sha256": "5db2a490fcef0e5787898bd808d1243c6e658aad4921fc287819f7fd6678aa26",
+      "url": "https://download.jetbrains.com/webide/PhpStorm-242.20224.175.tar.gz",
+      "build_number": "242.20224.175",
       "version-major-minor": "2022.3"
     },
     "pycharm-community": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "043c33371cb5fb31fdeab6deccc809189efdc6d404f771c541d4dd779adcd2fa",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2024.1.4.tar.gz",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "2fec952a4eeb25808066c1279809506723e106ad6c5d5d747b85e7ee1c41150f",
+      "url": "https://download.jetbrains.com/python/pycharm-community-242.20224.170.tar.gz",
+      "build_number": "242.20224.170"
     },
     "pycharm-professional": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "3a12ada098a839ba3c32820071ecc04cb71e8e1066d0753397399c2e52941de9",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2024.1.4.tar.gz",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "14fbaad7ad427f68df2c06978ddd6ff6fa8169d193cfb3d6f626329764e0ac4d",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-242.20224.170.tar.gz",
+      "build_number": "242.20224.170"
     },
     "rider": {
-      "update-channel": "Rider RELEASE",
+      "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}.tar.gz",
-      "version": "2024.1.4",
+      "version": "2024.1 RC",
       "sha256": "e277c2636383c023f00bd7833be86ffe1f8f67cf98cb719bbb4293aa42ba8ad0",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-2024.1.4.tar.gz",
-      "build_number": "241.18034.76"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225.tar.gz",
+      "build_number": "241.14494.225"
     },
     "ruby-mine": {
-      "update-channel": "RubyMine RELEASE",
+      "update-channel": "RubyMine EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/ruby/RubyMine-{version}.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "84b96e1f6cdbb5497fcce1a036044e5c51002006ac8926be72d37ec48b1ceb52",
-      "url": "https://download.jetbrains.com/ruby/RubyMine-2024.1.4.tar.gz",
-      "build_number": "241.18034.63"
+      "version": "2024.2 RC",
+      "sha256": "03f9ad612bc5f45f710213057abfecd118e5e1459b8348f2fa32c3193f908d65",
+      "url": "https://download.jetbrains.com/ruby/RubyMine-242.20224.155.tar.gz",
+      "build_number": "242.20224.155"
     },
     "rust-rover": {
-      "update-channel": "RustRover RELEASE",
+      "update-channel": "RustRover EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}.tar.gz",
       "version": "2024.1.6",
       "sha256": "42cf845a9159ab5ab182f501cb95154a27701af04ea01e309308ef6a5bb9ebfa",
@@ -114,130 +114,130 @@
       "build_number": "241.17890.43"
     },
     "webstorm": {
-      "update-channel": "WebStorm RELEASE",
+      "update-channel": "WebStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webstorm/WebStorm-{version}.tar.gz",
-      "version": "2024.1.5",
-      "sha256": "339ac8fc3ecc20afdef05b1782cb861d52eb09336d6a20cc4aa487c1bd108522",
-      "url": "https://download.jetbrains.com/webstorm/WebStorm-2024.1.5.tar.gz",
-      "build_number": "241.18034.50"
+      "version": "2024.2 RC",
+      "sha256": "f356ce0f581761e2adbf62972f07bb2f9f9b0b744d79a72e15c17bb79b45c5ee",
+      "url": "https://download.jetbrains.com/webstorm/WebStorm-242.20224.227.tar.gz",
+      "build_number": "242.20224.227"
     },
     "writerside": {
       "update-channel": "Writerside EAP",
       "url-template": "https://download.jetbrains.com/writerside/writerside-{version}.tar.gz",
       "version": "2024.1 EAP",
-      "sha256": "47b3323fc18e6f8c9edc71ed309b95f09385123d9b9c9492b55ad6a77b2925ee",
-      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.98.tar.gz",
-      "build_number": "241.18775.98"
+      "sha256": "7da1531fc7f1f3995957729b412bf43e5757b0029ffcdf858270e64ae30ee462",
+      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.101.tar.gz",
+      "build_number": "241.18775.101"
     }
   },
   "aarch64-linux": {
     "clion": {
-      "update-channel": "CLion RELEASE",
+      "update-channel": "CLion EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "1e707c5409fd4a8490893ce23ff427d8e96d2cb6c31f1457a363e3127f0d1319",
-      "url": "https://download.jetbrains.com/cpp/CLion-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.45"
+      "version": "2024.2 Release Candidate",
+      "sha256": "f71b026463e7cc5b9c41a704c5c19cdd97152db76b8ebe8c2e3f108760e3986d",
+      "url": "https://download.jetbrains.com/cpp/CLion-242.20224.214-aarch64.tar.gz",
+      "build_number": "242.20224.214"
     },
     "datagrip": {
-      "update-channel": "DataGrip RELEASE",
+      "update-channel": "DataGrip EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/datagrip/datagrip-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "e9ec44d7a219c3d6d1ae7cd2fd59bd67f62997f403f17154d9de3f700b52c412",
-      "url": "https://download.jetbrains.com/datagrip/datagrip-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.17890.24"
+      "version": "2024.2 RC",
+      "sha256": "97b68f46e0bd256a35cdf0c0685fa137bede450f9868fbf6399742d1dad3ad7c",
+      "url": "https://download.jetbrains.com/datagrip/datagrip-242.20224.237-aarch64.tar.gz",
+      "build_number": "242.20224.237"
     },
     "dataspell": {
-      "update-channel": "DataSpell RELEASE",
+      "update-channel": "DataSpell EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}-aarch64.tar.gz",
-      "version": "2024.1.3",
-      "sha256": "d7d7647e2e6c398148d87690c0224cac2212bb56e1c9d802bd79748df77f1b24",
-      "url": "https://download.jetbrains.com/python/dataspell-2024.1.3-aarch64.tar.gz",
-      "build_number": "241.18034.23"
+      "version": "2024.2 RC",
+      "sha256": "8c7366ef5a95cebd628eceae77602031c14920496a19c7fd555de5caf3eeca71",
+      "url": "https://download.jetbrains.com/python/dataspell-242.20224.267-aarch64.tar.gz",
+      "build_number": "242.20224.267"
     },
     "gateway": {
-      "update-channel": "Gateway RELEASE",
+      "update-channel": "Gateway EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-{version}-aarch64.tar.gz",
-      "version": "2024.1.2",
-      "sha256": "ca3983e280d2184ce806741d47c72fb9d8e3610c89ee7e56940960a8385b473b",
-      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-2024.1.2-aarch64.tar.gz",
-      "build_number": "241.17011.87"
+      "version": "2024.1.1 Release Candidate",
+      "sha256": "f500422ce9f2c7edb6515b3e7c6336df94000f0c2c454fe207a295489dcf3a0d",
+      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-241.15989.74-aarch64.tar.gz",
+      "build_number": "241.15989.74"
     },
     "goland": {
-      "update-channel": "GoLand RELEASE",
+      "update-channel": "GoLand EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/go/goland-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "b5b9efc087c71369c85080b9159e268bcf16a493e69e359b67108f71a474dd61",
-      "url": "https://download.jetbrains.com/go/goland-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.61"
+      "version": "2024.2 RC",
+      "sha256": "cbb5b83a700b36fa1932d8593f719249351451447c6fefe6697819cb15a96d55",
+      "url": "https://download.jetbrains.com/go/goland-242.20224.204-aarch64.tar.gz",
+      "build_number": "242.20224.204"
     },
     "idea-community": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIC-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "d4991c6041bfbe9958b55e876a45672d90ddcaf7aae18ac1c9134747a102eddf",
-      "url": "https://download.jetbrains.com/idea/ideaIC-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "14d3610c63056bb778a2763982eda902284f6349094db2ce65d2bf5e479d79ce",
+      "url": "https://download.jetbrains.com/idea/ideaIC-242.20224.159-aarch64.tar.gz",
+      "build_number": "242.20224.159"
     },
     "idea-ultimate": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIU-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "35057b24047c719102f08a22754bba1c66098f0d410b21ab178d7b6b9a8f7882",
-      "url": "https://download.jetbrains.com/idea/ideaIU-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "5d13296a75f3b7804d8a8316fbd8110d9f5c3e87c9be982bad3975981d8ce7e9",
+      "url": "https://download.jetbrains.com/idea/ideaIU-242.20224.159-aarch64.tar.gz",
+      "build_number": "242.20224.159"
     },
     "mps": {
-      "update-channel": "MPS RELEASE",
+      "update-channel": "MPS EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/mps/{versionMajorMinor}/MPS-{version}.tar.gz",
-      "version": "2023.3.1",
+      "version": "2024.1-RC1 EAP",
       "sha256": "7f40c6a9b29e17e29fd2acb2e0d1d31d3353e28fce31a479dd81dd1b66c1fa8c",
-      "url": "https://download.jetbrains.com/mps/2023.3.1/MPS-2023.3.1.tar.gz",
-      "build_number": "233.13135.1068"
+      "url": "https://download.jetbrains.com/mps/2024.1-RC1/MPS-241.18034.990.tar.gz",
+      "build_number": "241.18034.990"
     },
     "phpstorm": {
-      "update-channel": "PhpStorm RELEASE",
+      "update-channel": "PhpStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webide/PhpStorm-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "45a11309799d23b1638a87ee4580bd5e8d4f50ea07d5467e99e416ae45a23b06",
-      "url": "https://download.jetbrains.com/webide/PhpStorm-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.69",
+      "version": "2024.2 Release Candidate",
+      "sha256": "8f2668bec377caf477b743510c638253479a26779f0b90fea481fe251fa7b0e3",
+      "url": "https://download.jetbrains.com/webide/PhpStorm-242.20224.175-aarch64.tar.gz",
+      "build_number": "242.20224.175",
       "version-major-minor": "2022.3"
     },
     "pycharm-community": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "40dc15c31f44afd8ea5b42de54863253036b0d0f41b20612d0abd937e36af267",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "b9220f38c6342a4a3a19a6f2e49c51b08f456afb2077f7064959093457c4fb60",
+      "url": "https://download.jetbrains.com/python/pycharm-community-242.20224.170-aarch64.tar.gz",
+      "build_number": "242.20224.170"
     },
     "pycharm-professional": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "a90c657a333e1825c934d524cb426115c85d19d7aebfa4a149fda5062be29fab",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "5b402f0cb57daf226af021274797b119e40f6db8e531b7c23279b8e13cce1ee1",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-242.20224.170-aarch64.tar.gz",
+      "build_number": "242.20224.170"
     },
     "rider": {
-      "update-channel": "Rider RELEASE",
+      "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
+      "version": "2024.1 RC",
       "sha256": "e0f8ac64b87c093c7f97ea6ee340c7f518d14d4c68c17d0a2b7a9f079d2fcd62",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.76"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225-aarch64.tar.gz",
+      "build_number": "241.14494.225"
     },
     "ruby-mine": {
-      "update-channel": "RubyMine RELEASE",
+      "update-channel": "RubyMine EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/ruby/RubyMine-{version}-aarch64.tar.gz",
-      "version": "2024.1.4",
-      "sha256": "b4d51afd0cf8ef19e6eae5a401836a89164215cf532a08a33824895229dba321",
-      "url": "https://download.jetbrains.com/ruby/RubyMine-2024.1.4-aarch64.tar.gz",
-      "build_number": "241.18034.63"
+      "version": "2024.2 RC",
+      "sha256": "d0adf70e63856d7badd4c61c0cbb19ac19caf53c4d019ee0d1fa018387d15357",
+      "url": "https://download.jetbrains.com/ruby/RubyMine-242.20224.155-aarch64.tar.gz",
+      "build_number": "242.20224.155"
     },
     "rust-rover": {
-      "update-channel": "RustRover RELEASE",
+      "update-channel": "RustRover EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}-aarch64.tar.gz",
       "version": "2024.1.6",
       "sha256": "4671d426dfbf89f614c1ce367c7afba0ef64b7058b4777b72ce145715a352fd1",
@@ -245,130 +245,130 @@
       "build_number": "241.17890.43"
     },
     "webstorm": {
-      "update-channel": "WebStorm RELEASE",
+      "update-channel": "WebStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webstorm/WebStorm-{version}-aarch64.tar.gz",
-      "version": "2024.1.5",
-      "sha256": "20db531cecada0fdd1947234ac120d0cf2a40037a3af825f1cf2ac066709fb44",
-      "url": "https://download.jetbrains.com/webstorm/WebStorm-2024.1.5-aarch64.tar.gz",
-      "build_number": "241.18034.50"
+      "version": "2024.2 RC",
+      "sha256": "d7e2f600d7e57b5ce6c5d1d47d8d2726a756743a97f0a67508ccdf8502b56a04",
+      "url": "https://download.jetbrains.com/webstorm/WebStorm-242.20224.227-aarch64.tar.gz",
+      "build_number": "242.20224.227"
     },
     "writerside": {
       "update-channel": "Writerside EAP",
       "url-template": "https://download.jetbrains.com/writerside/writerside-{version}-aarch64.tar.gz",
       "version": "2024.1 EAP",
-      "sha256": "937c30cdfd1431bcdde10bf47f1236ea57c10eca8cd1210a04629a64b383c054",
-      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.98-aarch64.tar.gz",
-      "build_number": "241.18775.98"
+      "sha256": "2f8d90582f19eee4c1b83d9c61846baa7ec3f4e75dde10ba069712e9677b2a60",
+      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.101-aarch64.tar.gz",
+      "build_number": "241.18775.101"
     }
   },
   "x86_64-darwin": {
     "clion": {
-      "update-channel": "CLion RELEASE",
+      "update-channel": "CLion EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "1d1d03a19aba6f941703ca5724317464e670a1ab63d70882448cf0364bc13c8b",
-      "url": "https://download.jetbrains.com/cpp/CLion-2024.1.4.dmg",
-      "build_number": "241.18034.45"
+      "version": "2024.2 Release Candidate",
+      "sha256": "f0ca909a3dc48ccf7db43d7f1307c5d7849904e870c4e6270e71513b7d12349a",
+      "url": "https://download.jetbrains.com/cpp/CLion-242.20224.214.dmg",
+      "build_number": "242.20224.214"
     },
     "datagrip": {
-      "update-channel": "DataGrip RELEASE",
+      "update-channel": "DataGrip EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/datagrip/datagrip-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "2221288ed33060d67368aa9d56a8d7c25df8158b5d38bb26ddf145ef58de8721",
-      "url": "https://download.jetbrains.com/datagrip/datagrip-2024.1.4.dmg",
-      "build_number": "241.17890.24"
+      "version": "2024.2 RC",
+      "sha256": "62b8f6071f8ec6e3e9662429613695ccc9a7e73e46f347bef929c71031ebdb4f",
+      "url": "https://download.jetbrains.com/datagrip/datagrip-242.20224.237.dmg",
+      "build_number": "242.20224.237"
     },
     "dataspell": {
-      "update-channel": "DataSpell RELEASE",
+      "update-channel": "DataSpell EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}.dmg",
-      "version": "2024.1.3",
-      "sha256": "132c1e67c18d676844a26ad95fcd68942965157222f7dc931c15117e96d29a84",
-      "url": "https://download.jetbrains.com/python/dataspell-2024.1.3.dmg",
-      "build_number": "241.18034.23"
+      "version": "2024.2 RC",
+      "sha256": "5be76676bdab79cc189251d94417081fec8fe758a4bbb3da3d73e04d1190d361",
+      "url": "https://download.jetbrains.com/python/dataspell-242.20224.267.dmg",
+      "build_number": "242.20224.267"
     },
     "gateway": {
-      "update-channel": "Gateway RELEASE",
+      "update-channel": "Gateway EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-{version}.dmg",
-      "version": "2024.1.2",
-      "sha256": "be7e34b5a4a4e28b90c3d90f5761767d3d6e996cdc5846d3f8bd0e05d3ee0f1a",
-      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-2024.1.2.dmg",
-      "build_number": "241.17011.87"
+      "version": "2024.1.1 Release Candidate",
+      "sha256": "4513e26abf40f69a6eecd7f52d20a0f20e82a87722d4e8a4bd71718a4cba51b0",
+      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-241.15989.74.dmg",
+      "build_number": "241.15989.74"
     },
     "goland": {
-      "update-channel": "GoLand RELEASE",
+      "update-channel": "GoLand EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/go/goland-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "e2b2ae8d52700335d539b28179410b2567c78f6c8121a742e4df208180b55884",
-      "url": "https://download.jetbrains.com/go/goland-2024.1.4.dmg",
-      "build_number": "241.18034.61"
+      "version": "2024.2 RC",
+      "sha256": "8561c34a43d07644c56e236b11750631cd2a9567fc1a6a0f15d0938437071860",
+      "url": "https://download.jetbrains.com/go/goland-242.20224.204.dmg",
+      "build_number": "242.20224.204"
     },
     "idea-community": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIC-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "2420493df5796e47836d3dfd579006f25aa88f1252db4fd6999591529022e925",
-      "url": "https://download.jetbrains.com/idea/ideaIC-2024.1.4.dmg",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "a0352518f3d50524ecbcf541575e71e416f4801aee39ebef652b775d652c6a71",
+      "url": "https://download.jetbrains.com/idea/ideaIC-242.20224.159.dmg",
+      "build_number": "242.20224.159"
     },
     "idea-ultimate": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIU-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "30396377e163ba7f8d5c4ef112e9c8abb064897dd337f059357feecaa6c53b6e",
-      "url": "https://download.jetbrains.com/idea/ideaIU-2024.1.4.dmg",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "6acfb01fe4bd7aa6072f861d3b90fef7951e3ab3fdcd0c2be315b7a4f26c8591",
+      "url": "https://download.jetbrains.com/idea/ideaIU-242.20224.159.dmg",
+      "build_number": "242.20224.159"
     },
     "mps": {
-      "update-channel": "MPS RELEASE",
+      "update-channel": "MPS EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/mps/{versionMajorMinor}/MPS-{version}-macos.dmg",
-      "version": "2023.3.1",
+      "version": "2024.1-RC1 EAP",
       "sha256": "c1e46dcb3429772b164f423cedc644f388217d1e7310d682b2341f9e744333bf",
-      "url": "https://download.jetbrains.com/mps/2023.3.1/MPS-2023.3.1-macos.dmg",
-      "build_number": "233.13135.1068"
+      "url": "https://download.jetbrains.com/mps/2024.1-RC1/MPS-241.18034.990-macos.dmg",
+      "build_number": "241.18034.990"
     },
     "phpstorm": {
-      "update-channel": "PhpStorm RELEASE",
+      "update-channel": "PhpStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webide/PhpStorm-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "ce844a947a96d819a59b35705fd1007c5193a444c3bb5d237179bfb3ceb2ed8b",
-      "url": "https://download.jetbrains.com/webide/PhpStorm-2024.1.4.dmg",
-      "build_number": "241.18034.69",
+      "version": "2024.2 Release Candidate",
+      "sha256": "47408b2d3f65badc31ae5f1a91ffb29e33a681191f7c585b8a8bb1215b3897e3",
+      "url": "https://download.jetbrains.com/webide/PhpStorm-242.20224.175.dmg",
+      "build_number": "242.20224.175",
       "version-major-minor": "2022.3"
     },
     "pycharm-community": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "22558efc74b2d10fcde02650765cc3b500841d71796dba48d018fc8f794cfd5f",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2024.1.4.dmg",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "061b0c94081aacf4a3527fed694208e2349786a9ae66654984d10982c0afeeb8",
+      "url": "https://download.jetbrains.com/python/pycharm-community-242.20224.170.dmg",
+      "build_number": "242.20224.170"
     },
     "pycharm-professional": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "99f22cba7855dbe8acaa0ec222dfaa75cea2ebe5975f1adca6c7b52c7fa763a5",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2024.1.4.dmg",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "5b6844b8c387acd0bf3d496090e78973d686634a1b4912e735016e67a215ad05",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-242.20224.170.dmg",
+      "build_number": "242.20224.170"
     },
     "rider": {
-      "update-channel": "Rider RELEASE",
+      "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}.dmg",
-      "version": "2024.1.4",
+      "version": "2024.1 RC",
       "sha256": "2fc9e3063278e510b28eea0b2823b0c2309d08728d53261b48cbac093255cbfe",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-2024.1.4.dmg",
-      "build_number": "241.18034.76"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225.dmg",
+      "build_number": "241.14494.225"
     },
     "ruby-mine": {
-      "update-channel": "RubyMine RELEASE",
+      "update-channel": "RubyMine EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/ruby/RubyMine-{version}.dmg",
-      "version": "2024.1.4",
-      "sha256": "a4619da76349319b45a7bacbc49c3c53b8bd0769692e30f84f78a5c61ccd552b",
-      "url": "https://download.jetbrains.com/ruby/RubyMine-2024.1.4.dmg",
-      "build_number": "241.18034.63"
+      "version": "2024.2 RC",
+      "sha256": "586fc94b7253d72d9a61d202be3381c0aeffe25a73430225644b8562d795bb33",
+      "url": "https://download.jetbrains.com/ruby/RubyMine-242.20224.155.dmg",
+      "build_number": "242.20224.155"
     },
     "rust-rover": {
-      "update-channel": "RustRover RELEASE",
+      "update-channel": "RustRover EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}.dmg",
       "version": "2024.1.6",
       "sha256": "c5f079356ae9e38424be3257734b8665393146c831bddc917a4b1086321682cf",
@@ -376,130 +376,130 @@
       "build_number": "241.17890.43"
     },
     "webstorm": {
-      "update-channel": "WebStorm RELEASE",
+      "update-channel": "WebStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webstorm/WebStorm-{version}.dmg",
-      "version": "2024.1.5",
-      "sha256": "45475fda7a66ba5da23091a7d9ec3314c9482b0a31fe9cc40a3a02f243c86e48",
-      "url": "https://download.jetbrains.com/webstorm/WebStorm-2024.1.5.dmg",
-      "build_number": "241.18034.50"
+      "version": "2024.2 RC",
+      "sha256": "dee19f4473d5dd4fe64932005bc0fdc00838b7330f63fb5d8b55a8ea18571d05",
+      "url": "https://download.jetbrains.com/webstorm/WebStorm-242.20224.227.dmg",
+      "build_number": "242.20224.227"
     },
     "writerside": {
       "update-channel": "Writerside EAP",
       "url-template": "https://download.jetbrains.com/writerside/writerside-{version}.dmg",
       "version": "2024.1 EAP",
-      "sha256": "0e97d9a2ef53f18930b63a48d7303783aca7422c5d6818543f4805c01991ba41",
-      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.98.dmg",
-      "build_number": "241.18775.98"
+      "sha256": "fad7fbf6fec147556b53b75adb02f22df038822f4cb0662dd4748dcc1ffd0969",
+      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.101.dmg",
+      "build_number": "241.18775.101"
     }
   },
   "aarch64-darwin": {
     "clion": {
-      "update-channel": "CLion RELEASE",
+      "update-channel": "CLion EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/cpp/CLion-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "9eed7144d482a4fc9d6cc639c04c0b99cc6831aa73c5998ac9d1e1bd23f7ab66",
-      "url": "https://download.jetbrains.com/cpp/CLion-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.45"
+      "version": "2024.2 Release Candidate",
+      "sha256": "19ac216355f1d65150359a8f6fee6d9b365b488a7b3b85867466f81d68760142",
+      "url": "https://download.jetbrains.com/cpp/CLion-242.20224.214-aarch64.dmg",
+      "build_number": "242.20224.214"
     },
     "datagrip": {
-      "update-channel": "DataGrip RELEASE",
+      "update-channel": "DataGrip EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/datagrip/datagrip-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "329bc223f5a3d16c68c2d271f2576f9e174ab88a9871b928f1dd8601b2d2cf70",
-      "url": "https://download.jetbrains.com/datagrip/datagrip-2024.1.4-aarch64.dmg",
-      "build_number": "241.17890.24"
+      "version": "2024.2 RC",
+      "sha256": "e17e9b69a4d47c6c2dd1085ca0cd06f9611273ae3f551c17c916d360d56230df",
+      "url": "https://download.jetbrains.com/datagrip/datagrip-242.20224.237-aarch64.dmg",
+      "build_number": "242.20224.237"
     },
     "dataspell": {
-      "update-channel": "DataSpell RELEASE",
+      "update-channel": "DataSpell EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/dataspell-{version}-aarch64.dmg",
-      "version": "2024.1.3",
-      "sha256": "fa8f9c77b2fab31ea383a492c7a061e4b297e6581df4a5c116de9aec4a52c86d",
-      "url": "https://download.jetbrains.com/python/dataspell-2024.1.3-aarch64.dmg",
-      "build_number": "241.18034.23"
+      "version": "2024.2 RC",
+      "sha256": "e829ba6282b1ea36553b4cc377c91c1063ab06164b7c7b75be1b4b60f45e84a8",
+      "url": "https://download.jetbrains.com/python/dataspell-242.20224.267-aarch64.dmg",
+      "build_number": "242.20224.267"
     },
     "gateway": {
-      "update-channel": "Gateway RELEASE",
+      "update-channel": "Gateway EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-{version}-aarch64.dmg",
-      "version": "2024.1.2",
-      "sha256": "70aab722715cb1abbab01e25109b6ca967588bcf3c1cec666986e42b825b0d9d",
-      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-2024.1.2-aarch64.dmg",
-      "build_number": "241.17011.87"
+      "version": "2024.1.1 Release Candidate",
+      "sha256": "840eb4ae9d2de9bbe353007798a6337f307f177e907754382ce7bef8be060e01",
+      "url": "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-241.15989.74-aarch64.dmg",
+      "build_number": "241.15989.74"
     },
     "goland": {
-      "update-channel": "GoLand RELEASE",
+      "update-channel": "GoLand EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/go/goland-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "6dd71b3993b005e3557ad6ddb4d9ed87068be5225df19422e4b0e3fdd0fbbd10",
-      "url": "https://download.jetbrains.com/go/goland-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.61"
+      "version": "2024.2 RC",
+      "sha256": "f2e9f65bb4267753eab94dc451cd990a292caf69638a466d6a9547619c30cd1b",
+      "url": "https://download.jetbrains.com/go/goland-242.20224.204-aarch64.dmg",
+      "build_number": "242.20224.204"
     },
     "idea-community": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIC-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "0c2e9a534d8f84acf8a17412d73e3f161864268acefee5130259489e2575d246",
-      "url": "https://download.jetbrains.com/idea/ideaIC-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "83198c7cbe5b97a03bf062792485f2cb8d2ba146921424888725f7621c0fcc7d",
+      "url": "https://download.jetbrains.com/idea/ideaIC-242.20224.159-aarch64.dmg",
+      "build_number": "242.20224.159"
     },
     "idea-ultimate": {
-      "update-channel": "IntelliJ IDEA RELEASE",
+      "update-channel": "IntelliJ IDEA EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/idea/ideaIU-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "0d6dd0ebc97a61920721fb6c9663a905df1edea976f62b32bdf8ff879c02c7d0",
-      "url": "https://download.jetbrains.com/idea/ideaIU-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.62"
+      "version": "2024.2 Release Candidate",
+      "sha256": "2e401544561513a4ad272b5ce08748f73a1d63ac5ab9b75b65702f643209d8c5",
+      "url": "https://download.jetbrains.com/idea/ideaIU-242.20224.159-aarch64.dmg",
+      "build_number": "242.20224.159"
     },
     "mps": {
-      "update-channel": "MPS RELEASE",
+      "update-channel": "MPS EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/mps/{versionMajorMinor}/MPS-{version}-macos-aarch64.dmg",
-      "version": "2023.3.1",
-      "url": "https://download.jetbrains.com/mps/2023.3.1/MPS-2023.3.1-macos-aarch64.dmg",
+      "version": "2024.1-RC1 EAP",
+      "url": "https://download.jetbrains.com/mps/2024.1-RC1/MPS-241.18034.990-macos-aarch64.dmg",
       "sha256": "133e5bae81d675a6ee7780efec18dd96dfed059dbfdd2ad4a1028d9956a1ec6e",
-      "build_number": "233.13135.1068"
+      "build_number": "241.18034.990"
     },
     "phpstorm": {
-      "update-channel": "PhpStorm RELEASE",
+      "update-channel": "PhpStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webide/PhpStorm-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "8e5bffb20b1606195afe6818429e99b31c56f2e8f390c81cd6d92ff3de80de68",
-      "url": "https://download.jetbrains.com/webide/PhpStorm-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.69",
+      "version": "2024.2 Release Candidate",
+      "sha256": "71273b6458e9605be0421fc0e95b4a2e01fd9454b5d7e5fa85ede4cb8478a80f",
+      "url": "https://download.jetbrains.com/webide/PhpStorm-242.20224.175-aarch64.dmg",
+      "build_number": "242.20224.175",
       "version-major-minor": "2022.3"
     },
     "pycharm-community": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-community-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "63c0a14bbad81ab0c1c733802eaf86328e46ebc2de4e7bc0e240f76aefbdf54e",
-      "url": "https://download.jetbrains.com/python/pycharm-community-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "d506367886752e6e3698a3f05cfbc518886f07757bfdf1da5a8d140d01c741fd",
+      "url": "https://download.jetbrains.com/python/pycharm-community-242.20224.170-aarch64.dmg",
+      "build_number": "242.20224.170"
     },
     "pycharm-professional": {
-      "update-channel": "PyCharm RELEASE",
+      "update-channel": "PyCharm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/python/pycharm-professional-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "ecfd340566f8c9ed6afcd42331568db5d91fa3a036c511ae8427f573199c3a44",
-      "url": "https://download.jetbrains.com/python/pycharm-professional-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.82"
+      "version": "2024.2 Release Candidate",
+      "sha256": "521236beba0d82abbb6cfe967b69a482a1f84649373c54ac1cb641500c41d1cf",
+      "url": "https://download.jetbrains.com/python/pycharm-professional-242.20224.170-aarch64.dmg",
+      "build_number": "242.20224.170"
     },
     "rider": {
-      "update-channel": "Rider RELEASE",
+      "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}-aarch64.dmg",
-      "version": "2024.1.4",
+      "version": "2024.1 RC",
       "sha256": "0682ca85bb61534e39426d9f397eeb3c383dfd0a2e9dc4e8052d9e6408741fdb",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.76"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225-aarch64.dmg",
+      "build_number": "241.14494.225"
     },
     "ruby-mine": {
-      "update-channel": "RubyMine RELEASE",
+      "update-channel": "RubyMine EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/ruby/RubyMine-{version}-aarch64.dmg",
-      "version": "2024.1.4",
-      "sha256": "ad3ebd40266f40f5aadb152fc5e845bda1eb8de75923cf598072458dc92b8194",
-      "url": "https://download.jetbrains.com/ruby/RubyMine-2024.1.4-aarch64.dmg",
-      "build_number": "241.18034.63"
+      "version": "2024.2 RC",
+      "sha256": "8b5d4eed6a9de33a4254a51309b6b3899884b5c6e6f5bc155dc99a9f39e72bb3",
+      "url": "https://download.jetbrains.com/ruby/RubyMine-242.20224.155-aarch64.dmg",
+      "build_number": "242.20224.155"
     },
     "rust-rover": {
-      "update-channel": "RustRover RELEASE",
+      "update-channel": "RustRover EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rustrover/RustRover-{version}-aarch64.dmg",
       "version": "2024.1.6",
       "sha256": "5216ea7e5e994a3df4f1095772f5a44e999d7ca0ac02a21698149c8023c46893",
@@ -507,20 +507,20 @@
       "build_number": "241.17890.43"
     },
     "webstorm": {
-      "update-channel": "WebStorm RELEASE",
+      "update-channel": "WebStorm EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/webstorm/WebStorm-{version}-aarch64.dmg",
-      "version": "2024.1.5",
-      "sha256": "e55e4671316ad2c2bfc5564516e261b59d139267c18d06d7a62b8f665d86da5e",
-      "url": "https://download.jetbrains.com/webstorm/WebStorm-2024.1.5-aarch64.dmg",
-      "build_number": "241.18034.50"
+      "version": "2024.2 RC",
+      "sha256": "db3d39b4efe345302d980b21d32a61318b0ae9e63cf654848ebc50067535d1e6",
+      "url": "https://download.jetbrains.com/webstorm/WebStorm-242.20224.227-aarch64.dmg",
+      "build_number": "242.20224.227"
     },
     "writerside": {
       "update-channel": "Writerside EAP",
       "url-template": "https://download.jetbrains.com/writerside/writerside-{version}-aarch64.dmg",
       "version": "2024.1 EAP",
-      "sha256": "956fc3d39a2aa34648c272780843729356a20c0a4a1ceb20e69a9f86a562278c",
-      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.98-aarch64.dmg",
-      "build_number": "241.18775.98"
+      "sha256": "dc1d01915ff31d14828b668b71cfc92529d389af122adca06d785f7cc3a9d784",
+      "url": "https://download.jetbrains.com/writerside/writerside-241.18775.101-aarch64.dmg",
+      "build_number": "241.18775.101"
     }
   }
 }
