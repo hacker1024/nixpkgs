@@ -92,10 +92,10 @@
     "rider": {
       "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}.tar.gz",
-      "version": "2024.1 RC",
+      "version": "2024.2 RC",
       "sha256": "e277c2636383c023f00bd7833be86ffe1f8f67cf98cb719bbb4293aa42ba8ad0",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225.tar.gz",
-      "build_number": "241.14494.225"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-242.20224.285.tar.gz",
+      "build_number": "242.20224.285"
     },
     "ruby-mine": {
       "update-channel": "RubyMine EAP licensing:RELEASE",
@@ -223,10 +223,10 @@
     "rider": {
       "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}-aarch64.tar.gz",
-      "version": "2024.1 RC",
+      "version": "2024.2 RC",
       "sha256": "e0f8ac64b87c093c7f97ea6ee340c7f518d14d4c68c17d0a2b7a9f079d2fcd62",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225-aarch64.tar.gz",
-      "build_number": "241.14494.225"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-242.20224.285-aarch64.tar.gz",
+      "build_number": "242.20224.285"
     },
     "ruby-mine": {
       "update-channel": "RubyMine EAP licensing:RELEASE",
@@ -354,10 +354,10 @@
     "rider": {
       "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}.dmg",
-      "version": "2024.1 RC",
+      "version": "2024.2 RC",
       "sha256": "2fc9e3063278e510b28eea0b2823b0c2309d08728d53261b48cbac093255cbfe",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225.dmg",
-      "build_number": "241.14494.225"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-242.20224.285.dmg",
+      "build_number": "242.20224.285"
     },
     "ruby-mine": {
       "update-channel": "RubyMine EAP licensing:RELEASE",
@@ -485,10 +485,10 @@
     "rider": {
       "update-channel": "Rider EAP licensing:RELEASE",
       "url-template": "https://download.jetbrains.com/rider/JetBrains.Rider-{version}-aarch64.dmg",
-      "version": "2024.1 RC",
+      "version": "2024.2 RC",
       "sha256": "0682ca85bb61534e39426d9f397eeb3c383dfd0a2e9dc4e8052d9e6408741fdb",
-      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-241.14494.225-aarch64.dmg",
-      "build_number": "241.14494.225"
+      "url": "https://download.jetbrains.com/rider/JetBrains.Rider-242.20224.285-aarch64.dmg",
+      "build_number": "242.20224.285"
     },
     "ruby-mine": {
       "update-channel": "RubyMine EAP licensing:RELEASE",
