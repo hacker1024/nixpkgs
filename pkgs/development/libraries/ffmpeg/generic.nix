@@ -34,7 +34,8 @@
 
   # Feature flags
 , withAlsa ? withHeadlessDeps && stdenv.isLinux # Alsa in/output supporT
-, withAom ? withFullDeps # AV1 reference encoder
+, withAmf ? lib.meta.availableOn stdenv.hostPlatform amf # AMD Media Framework video encoding
+, withAom ? withHeadlessDeps # AV1 reference encoder
 , withAppKit ? withHeadlessDeps && stdenv.isDarwin # Apple AppKit framework
 , withAribcaption ? withFullDeps && lib.versionAtLeast version "6.1" # ARIB STD-B24 Caption Decoder/Renderer
 , withAss ? withHeadlessDeps && stdenv.hostPlatform == stdenv.buildPlatform # (Advanced) SubStation Alpha subtitle rendering
@@ -45,7 +46,7 @@
 , withBs2b ? withFullDeps # bs2b DSP library
 , withBzlib ? withHeadlessDeps
 , withCaca ? withFullDeps # Textual display (ASCII art)
-, withCelt ? withFullDeps # CELT decoder
+, withCelt ? withHeadlessDeps # CELT decoder
 , withChromaprint ? withFullDeps # Audio fingerprinting
 , withCodec2 ? withFullDeps # codec2 en/decoding
 , withCoreImage ? withHeadlessDeps && stdenv.isDarwin # Apple CoreImage framework
@@ -69,6 +70,7 @@
 , withGsm ? withFullDeps # GSM de/encoder
 , withHarfbuzz ? withHeadlessDeps && lib.versionAtLeast version "6.1" # Needed for drawtext filter
 , withIconv ? withHeadlessDeps
+, withIlbc ? withFullDeps # iLBC de/encoding
 , withJack ? withFullDeps && !stdenv.isDarwin # Jack audio
 , withJxl ? withFullDeps && lib.versionAtLeast version "5" # JPEG XL de/encoding
 , withLadspa ? withFullDeps # LADSPA audio filtering
@@ -88,7 +90,7 @@
 , withOpencoreAmrwb ? withFullDeps && withVersion3 # AMR-WB decoder
 , withOpengl ? withFullDeps && !stdenv.isDarwin # OpenGL rendering
 , withOpenh264 ? withFullDeps # H.264/AVC encoder
-, withOpenjpeg ? withFullDeps # JPEG 2000 de/encoder
+, withOpenjpeg ? withHeadlessDeps # JPEG 2000 de/encoder
 , withOpenmpt ? withFullDeps # Tracked music files decoder
 , withOpus ? withHeadlessDeps # Opus de/encoder
 , withPlacebo ? withFullDeps && !stdenv.isDarwin # libplacebo video processing library
@@ -97,9 +99,12 @@
 , withQuirc ? withFullDeps && lib.versionAtLeast version "7" # QR decoding
 , withRav1e ? withFullDeps # AV1 encoder (focused on speed and safety)
 , withRtmp ? withFullDeps # RTMP[E] support
+, withRubberband ? withFullDeps && withGPL # Rubberband filter
 , withSamba ? withFullDeps && !stdenv.isDarwin && withGPLv3 # Samba protocol
 , withSdl2 ? withSmallDeps
 , withShaderc ? withFullDeps && !stdenv.isDarwin && lib.versionAtLeast version "5.0"
+, withShine ? withFullDeps # Fixed-point MP3 encoding
+, withSnappy ? withFullDeps # Snappy compression, needed for hap encoding
 , withSoxr ? withHeadlessDeps # Resampling via soxr
 , withSpeex ? withHeadlessDeps # Speex de/encoder
 , withSrt ? withHeadlessDeps # Secure Reliable Transport (SRT) protocol
@@ -121,7 +126,7 @@
 , withVpl ? false # Hardware acceleration via intel libvpl
 , withVpx ? withHeadlessDeps && stdenv.buildPlatform == stdenv.hostPlatform # VP8 & VP9 de/encoding
 , withVulkan ? withSmallDeps && !stdenv.isDarwin
-, withWebp ? withFullDeps # WebP encoder
+, withWebp ? withHeadlessDeps # WebP encoder
 , withX264 ? withHeadlessDeps && withGPL # H.264/AVC encoder
 , withX265 ? withHeadlessDeps && withGPL # H.265/HEVC encoder
 , withXavs ? withFullDeps && withGPL # AVS encoder
@@ -217,6 +222,8 @@
  *  External libraries options
  */
 , alsa-lib
+, amf
+, amf-headers
 , avisynthplus
 , bzip2
 , celt
@@ -251,6 +258,7 @@
 , libGL
 , libGLU
 , libiconv
+, libilbc
 , libjack2
 , libjxl
 , libmodplug
@@ -292,10 +300,13 @@
 , quirc
 , rav1e
 , rtmpdump
+, rubberband
 , twolame
 , samba
 , SDL2
 , shaderc
+, shine
+, snappy
 , soxr
 , speex
 , srt
@@ -317,6 +328,7 @@
 /*
  *  Darwin frameworks
  */
+, Accelerate
 , AppKit
 , AudioToolbox
 , AVFoundation
@@ -402,46 +414,11 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   patches = []
-    ++ optionals (versionOlder version "5") [
-      (fetchpatch2 {
-        name = "libsvtav1-1.5.0-compat-compressed_ten_bit_format.patch";
-        url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/031f1561cd286596cdb374da32f8aa816ce3b135";
-        hash = "sha256-agJgzIzrBTQBAypuCmGXXFo7vw6Iodw5Ny5O5QCKCn8=";
-      })
-      (fetchpatch2 {
-        # Backport fix for binutils-2.41.
-        name = "binutils-2.41.patch";
-        url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/effadce6c756247ea8bae32dc13bb3e6f464f0eb";
-        hash = "sha256-vLSltvZVMcQ0CnkU0A29x6fJSywE8/aU+Mp9os8DZYY=";
-      })
-      # The upstream patch isn’t for ffmpeg 4, but it will apply with a few tweaks.
-      # Fixes a crash when built with clang 16 due to UB in ff_seek_frame_binary.
-      (fetchpatch2 {
-        name = "utils-fix_crash_in_ff_seek_frame_binary.patch";
-        url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/ab792634197e364ca1bb194f9abe36836e42f12d";
-        hash = "sha256-vqqVACjbCcGL9Qvmg1QArSKqVmOqr8BEr+OxTBDt6mA=";
-        postFetch = ''
-          substituteInPlace "$out" \
-            --replace libavformat/seek.c libavformat/utils.c \
-            --replace 'const AVInputFormat *const ' 'const AVInputFormat *'
-        '';
-      })
-      (fetchpatch2 {
-        name = "CVE-2023-51794.patch";
-        url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/50f0f8c53c818f73fe2d752708e2fa9d2a2d8a07";
-        hash = "sha256-5G9lmKjMEa0+vqbA8EEiNIr6QG+PeEoIL+uZP4Hlo28=";
-      })
-    ]
     ++ optionals (lib.versionAtLeast version "6.1" && lib.versionOlder version "6.2") [
       (fetchpatch2 { # this can be removed post 6.1
         name = "fix_build_failure_due_to_PropertyKey_EncoderID";
         url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/cb049d377f54f6b747667a93e4b719380c3e9475";
         hash = "sha256-sxRXKKgUak5vsQTiV7ge8vp+N22CdTIvuczNgVRP72c=";
-      })
-      (fetchpatch2 {
-        name = "fix_vulkan_av1";
-        url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/e06ce6d2b45edac4a2df04f304e18d4727417d24";
-        hash = "sha256-73mlX1rdJrguw7OXaSItfHtI7gflDrFj+7SepVvvUIg=";
       })
       (fetchpatch2 {
         name = "CVE-2024-31582.patch";
@@ -575,6 +552,7 @@ stdenv.mkDerivation (finalAttrs: {
      *  External libraries
      */
     (enableFeature withAlsa "alsa")
+    (enableFeature withAmf "amf")
     (enableFeature withAom "libaom")
     (enableFeature withAppKit "appkit")
   ] ++ optionals (versionAtLeast version "6.1") [
@@ -617,6 +595,7 @@ stdenv.mkDerivation (finalAttrs: {
     (enableFeature withHarfbuzz "libharfbuzz")
   ] ++ [
     (enableFeature withIconv "iconv")
+    (enableFeature withIlbc "libilbc")
     (enableFeature withJack "libjack")
   ] ++ optionals (versionAtLeast finalAttrs.version "5.0") [
     (enableFeature withJxl "libjxl")
@@ -654,11 +633,14 @@ stdenv.mkDerivation (finalAttrs: {
   ] ++ [
     (enableFeature withRav1e "librav1e")
     (enableFeature withRtmp "librtmp")
+    (enableFeature withRubberband "librubberband")
     (enableFeature withSamba "libsmbclient")
     (enableFeature withSdl2 "sdl2")
   ] ++ optionals (versionAtLeast version "5.0") [
     (enableFeature withShaderc "libshaderc")
   ] ++ [
+    (enableFeature withShine "libshine")
+    (enableFeature withSnappy "libsnappy")
     (enableFeature withSoxr "libsoxr")
     (enableFeature withSpeex "libspeex")
     (enableFeature withSrt "libsrt")
@@ -739,6 +721,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs = []
   ++ optionals withAlsa [ alsa-lib ]
+  ++ optionals withAmf [ amf-headers ]
   ++ optionals withAom [ libaom ]
   ++ optionals withAppKit [ AppKit ]
   ++ optionals withAribcaption [ libaribcaption ]
@@ -771,6 +754,7 @@ stdenv.mkDerivation (finalAttrs: {
   ++ optionals withGsm [ gsm ]
   ++ optionals withHarfbuzz [ harfbuzz ]
   ++ optionals withIconv [ libiconv ] # On Linux this should be in libc, do we really need it?
+  ++ optionals withIlbc [ libilbc ]
   ++ optionals withJack [ libjack2 ]
   ++ optionals withJxl [ libjxl ]
   ++ optionals withLadspa [ ladspaH ]
@@ -795,9 +779,12 @@ stdenv.mkDerivation (finalAttrs: {
   ++ optionals withQuirc [ quirc ]
   ++ optionals withRav1e [ rav1e ]
   ++ optionals withRtmp [ rtmpdump ]
+  ++ optionals withRubberband ([ rubberband ] ++ lib.optional stdenv.hostPlatform.isDarwin Accelerate)
   ++ optionals withSamba [ samba ]
   ++ optionals withSdl2 [ SDL2 ]
   ++ optionals withShaderc [ shaderc ]
+  ++ optionals withShine [ shine ]
+  ++ optionals withSnappy [ snappy ]
   ++ optionals withSoxr [ soxr ]
   ++ optionals withSpeex [ speex ]
   ++ optionals withSrt [ srt ]

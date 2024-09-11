@@ -15,14 +15,14 @@
 
 buildPythonPackage rec {
   pname = "nbdev";
-  version = "2.3.26";
+  version = "2.3.28";
   pyproject = true;
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-PmLY2JQuVOl3NyWxwLewsEr7VKSdcWq7t0nNOHP9/8A=";
+    hash = "sha256-BTZFcX7/mPDgahK9K2WiVQUWK5lFhtH4f4IilgIIwgw=";
   };
 
 

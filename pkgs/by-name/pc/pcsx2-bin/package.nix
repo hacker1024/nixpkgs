@@ -3,16 +3,15 @@
   stdenvNoCC,
   fetchurl,
   makeWrapper,
-  nix-update-script,
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "pcsx2-bin";
-  version = "2.1.17";
+  version = "2.1.116";
 
   src = fetchurl {
     url = "https://github.com/PCSX2/pcsx2/releases/download/v${finalAttrs.version}/pcsx2-v${finalAttrs.version}-macos-Qt.tar.xz";
-    hash = "sha256-WuxvMcGuCyTAc99JkUjG0qcV7SXWy9fmaZR0+8iGepQ=";
+    hash = "sha256-QKblXvqziToYOhSf7k9c/5J5NviRqo4NBLFCN1Q+0VA=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
@@ -31,7 +30,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   '';
 
   passthru = {
-    updateScript = nix-update-script { };
+    updateScript = ./update.sh;
   };
 
   meta = {

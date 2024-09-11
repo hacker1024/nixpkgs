@@ -17,7 +17,9 @@
 , # Misc dependencies
   arrow-cpp
 , Cocoa
+, coc-clangd
 , coc-diagnostic
+, coc-pyright
 , code-minimap
 , dasht
 , deno
@@ -40,13 +42,15 @@
 , pandoc
 , parinfer-rust
 , phpactor
+, ranger
 , ripgrep
 , skim
 , sqlite
 , statix
 , stylish-haskell
 , tabnine
-, taskwarrior
+, taskwarrior2
+, taskwarrior3
 , tmux
 , tup
 , vim
@@ -137,8 +141,13 @@
     nvimRequireCheck = "alpha";
   };
 
-  advanced-git-search-nvim = super.autosave-nvim.overrideAttrs {
+  advanced-git-search-nvim = super.advanced-git-search-nvim.overrideAttrs {
     dependencies = with super; [ telescope-nvim vim-fugitive vim-rhubarb ];
+  };
+
+  animation-nvim = super.animation-nvim.overrideAttrs {
+    dependencies = with self; [ middleclass ];
+    nvimRequireCheck = "animation";
   };
 
   autosave-nvim = super.autosave-nvim.overrideAttrs {
@@ -337,9 +346,20 @@
     dependencies = with self; [ nvim-cmp zsh ];
   };
 
+  coc-clangd = buildVimPlugin {
+    inherit (coc-clangd) pname version meta;
+    src = "${coc-clangd}/lib/node_modules/coc-clangd";
+  };
+
   coc-diagnostic = buildVimPlugin {
     inherit (coc-diagnostic) pname version meta;
     src = "${coc-diagnostic}/lib/node_modules/coc-diagnostic";
+  };
+
+  coc-pyright = buildVimPlugin {
+    pname = "coc-pyright";
+    inherit (coc-pyright) version meta;
+    src = "${coc-pyright}/lib/node_modules/coc-pyright";
   };
 
   coc-nginx = buildVimPlugin {
@@ -655,6 +675,30 @@
     '';
   };
 
+  ddc-filter-matcher_head = super.ddc-filter-matcher_head.overrideAttrs {
+    dependencies = with self; [ ddc-vim ];
+  };
+
+  ddc-source-lsp = super.ddc-source-lsp.overrideAttrs {
+    dependencies = with self; [ ddc-vim ];
+  };
+
+  ddc-vim = super.ddc-vim.overrideAttrs {
+    dependencies = with self; [ denops-vim ];
+  };
+
+  ddc-filter-sorter_rank = super.ddc-filter-sorter_rank.overrideAttrs {
+    dependencies = with self; [ ddc-vim ];
+  };
+
+  ddc-ui-native = super.ddc-ui-native.overrideAttrs {
+    dependencies = with self; [ ddc-vim ];
+  };
+
+  ddc-ui-pum = super.ddc-ui-pum.overrideAttrs {
+    dependencies = with self; [ ddc-vim pum-vim ];
+  };
+
   defx-nvim = super.defx-nvim.overrideAttrs {
     dependencies = with self; [ nvim-yarp ];
   };
@@ -689,6 +733,10 @@
       license = lib.licenses.mit;
       maintainers = with lib.maintainers; [ jorsn ];
     };
+  };
+
+  diagram-nvim = super.diagram-nvim.overrideAttrs {
+    dependencies = with self; [ image-nvim ];
   };
 
   diffview-nvim = super.diffview-nvim.overrideAttrs {
@@ -782,7 +830,7 @@
     '';
   };
 
-  fzf-hoogle-vim = super.fzf-hoogle-vim.overrideAttrs {
+  fzf-hoogle-vim = super.fzf-hoogle-vim.overrideAttrs (oa: {
     # add this to your lua config to prevent the plugin from trying to write in the
     # nix store:
     # vim.g.hoogle_fzf_cache_file = vim.fn.stdpath('cache')..'/hoogle_cache.json'
@@ -791,7 +839,11 @@
       gawk
     ];
     dependencies = with self; [ fzf-vim ];
-  };
+    passthru = oa.passthru // {
+
+      initLua = "vim.g.hoogle_fzf_cache_file = vim.fn.stdpath('cache')..'/hoogle_cache.json";
+    };
+  });
 
   fzf-lua = super.fzf-lua.overrideAttrs {
     propagatedBuildInputs = [ fzf ];
@@ -993,11 +1045,18 @@
     dependencies = with self; [ plenary-nvim ];
   };
 
+  lsp-progress-nvim = neovimUtils.buildNeovimPlugin {
+    luaAttr = "lsp-progress-nvim";
+    nvimRequireCheck = "lsp-progress";
+  };
+
   luasnip = super.luasnip.overrideAttrs {
     dependencies = with self; [ luaPackages.jsregexp ];
   };
 
   lz-n = neovimUtils.buildNeovimPlugin { luaAttr = "lz-n"; };
+
+  lzn-auto-require = neovimUtils.buildNeovimPlugin { luaAttr = "lzn-auto-require"; };
 
   magma-nvim-goose = buildVimPlugin {
     pname = "magma-nvim-goose";
@@ -1054,6 +1113,10 @@
       '';
     };
 
+  markview-nvim = super.markview-nvim.overrideAttrs {
+    dependencies = with self; [ nvim-web-devicons ];
+  };
+
   mason-lspconfig-nvim = super.mason-lspconfig-nvim.overrideAttrs {
     dependencies = with self; [ mason-nvim nvim-lspconfig ];
   };
@@ -1066,6 +1129,11 @@
     inherit (meson) pname version src;
     preInstall = "cd data/syntax-highlighting/vim";
     meta.maintainers = with lib.maintainers; [ vcunat ];
+  };
+
+  middleclass = neovimUtils.buildNeovimPlugin {
+    luaAttr = "middleclass";
+    nvimRequireCheck = "middleclass";
   };
 
   minimap-vim = super.minimap-vim.overrideAttrs {
@@ -1090,6 +1158,34 @@
       sha256 = "1db5az5civ2bnqg7v3g937mn150ys52258c3glpvdvyyasxb4iih";
     };
     meta.homepage = "https://github.com/jose-elias-alvarez/minsnip.nvim/";
+  };
+
+  moveline-nvim = let
+    version = "2024-07-25";
+    src = fetchFromGitHub {
+      owner = "willothy";
+      repo = "moveline.nvim";
+      rev = "9f67f4b9e752a87eea8205f0279f261a16c733d8";
+      sha256 = "sha256-B4t5+Q4Urx5bGm8glNpYkHhpp/rAhz+lDd2EpWFUYoY=";
+    };
+    moveline-lib = rustPlatform.buildRustPackage {
+      inherit src version;
+      pname = "moveline-lib";
+      cargoHash = "sha256-e9QB4Rfm+tFNrLAHN/nYUQ5PiTET8knQQIQkMH3UFkU=";
+    };
+  in buildVimPlugin {
+    inherit src version;
+    pname = "moveline-nvim";
+    preInstall = ''
+      mkdir -p lua
+      ln -s ${moveline-lib}/lib/libmoveline.so lua/moveline.so
+    '';
+    meta = {
+      description = "Neovim plugin for moving lines up and down";
+      homepage = "https://github.com/willothy/moveline.nvim";
+      license = lib.licenses.mit;
+      maintainers = with lib.maintainers; [ redxtech ];
+    };
   };
 
   multicursors-nvim = super.multicursors-nvim.overrideAttrs {
@@ -1180,6 +1276,10 @@
     nvimRequireCheck = "dapui";
   };
 
+  nvim-dap-rr = super.nvim-dap-rr.overrideAttrs {
+    dependencies = [ self.nvim-dap ];
+  };
+
   nvim-genghis = super.nvim-genghis.overrideAttrs {
     dependencies = [ self.dressing-nvim ];
 
@@ -1241,7 +1341,7 @@
         inherit (old) version src;
         sourceRoot = "${old.src.name}/spectre_oxi";
 
-        cargoHash = "sha256-J9L9j8iyeZQRMjiVqdI7V7BOAkZaiLGOtKDpgq2wyi0=";
+        cargoHash = "sha256-D7KUJ8q521WWgUqBBOgepGJ3NQ4DdKr+Bg/4k3Lf+mw=";
 
         preCheck = ''
           mkdir tests/tmp/
@@ -1372,6 +1472,14 @@
     dependencies = with self; [ cmd-parser-nvim ];
   };
 
+  ranger-nvim = super.ranger-nvim.overrideAttrs {
+    patches = [ ./patches/ranger.nvim/fix-paths.patch ];
+
+    postPatch = ''
+      substituteInPlace lua/ranger-nvim.lua --replace '@ranger@' ${ranger}/bin/ranger
+    '';
+  };
+
   refactoring-nvim = super.refactoring-nvim.overrideAttrs {
     dependencies = with self; [ nvim-treesitter plenary-nvim ];
   };
@@ -1391,6 +1499,8 @@
   roslyn-nvim = super.roslyn-nvim.overrideAttrs {
     dependencies = with self; [ nvim-lspconfig ];
   };
+
+  rtp-nvim = neovimUtils.buildNeovimPlugin { luaAttr = "rtp-nvim"; };
 
   rustaceanvim = neovimUtils.buildNeovimPlugin { luaAttr = "rustaceanvim"; };
 
@@ -1429,6 +1539,10 @@
         mkdir -p $out/target/debug
         ln -s ${sg-nvim-rust}/{bin,lib}/* $out/target/debug
       '';
+
+      # Build fails with rust > 1.80
+      # https://github.com/sourcegraph/sg.nvim/issues/259
+      meta.broken = true;
     });
 
   skim = buildVimPlugin {
@@ -1439,6 +1553,10 @@
 
   skim-vim = super.skim-vim.overrideAttrs {
     dependencies = [ self.skim ];
+  };
+
+  smart-open-nvim = super.smart-open-nvim.overrideAttrs {
+    dependencies = with self; [ telescope-nvim sqlite-lua ];
   };
 
   sniprun =
@@ -1501,7 +1619,7 @@
     meta.homepage = "https://github.com/ackyshake/Spacegray.vim/";
   };
 
-  sqlite-lua = super.sqlite-lua.overrideAttrs {
+  sqlite-lua = super.sqlite-lua.overrideAttrs (oa: {
     postPatch =
       let
         libsqlite = "${sqlite.out}/lib/libsqlite3${stdenv.hostPlatform.extensions.sharedLibrary}";
@@ -1510,7 +1628,11 @@
         substituteInPlace lua/sqlite/defs.lua \
           --replace "path = vim.g.sqlite_clib_path" "path = vim.g.sqlite_clib_path or ${lib.escapeShellArg libsqlite}"
       '';
-  };
+
+      passthru = oa.passthru // {
+        initLua = ''vim.g.sqlite_clib_path = "${sqlite.out}/lib/libsqlite3${stdenv.hostPlatform.extensions.sharedLibrary}"'';
+      };
+  });
 
   ssr = super.ssr-nvim.overrideAttrs {
     dependencies = with self; [ nvim-treesitter ];
@@ -1577,9 +1699,14 @@
       };
     };
 
-  taskwarrior = buildVimPlugin {
-    inherit (taskwarrior) version pname;
-    src = "${taskwarrior.src}/scripts/vim";
+  taskwarrior3 = buildVimPlugin {
+    inherit (taskwarrior3) version pname;
+    src = "${taskwarrior3.src}/scripts/vim";
+  };
+
+  taskwarrior2 = buildVimPlugin {
+    inherit (taskwarrior2) version pname;
+    src = "${taskwarrior2.src}/scripts/vim";
   };
 
   telescope-cheat-nvim = super.telescope-cheat-nvim.overrideAttrs {
@@ -1689,14 +1816,19 @@
         sha256 = "16b0jzvvzarnlxdvs2izd5ia0ipbd87md143dc6lv6xpdqcs75s9";
       };
     in
-    super.unicode-vim.overrideAttrs {
+    super.unicode-vim.overrideAttrs (oa: {
       # redirect to /dev/null else changes terminal color
       buildPhase = ''
         cp "${unicode-data}" autoload/unicode/UnicodeData.txt
         echo "Building unicode cache"
         ${vim}/bin/vim --cmd ":set rtp^=$PWD" -c 'ru plugin/unicode.vim' -c 'UnicodeCache' -c ':echohl Normal' -c ':q' > /dev/null
       '';
-    };
+
+      passthru = oa.passthru // {
+
+        initLua = ''vim.g.Unicode_data_directory="${self.unicode-vim}/autoload/unicode"'';
+      };
+    });
 
   unison = super.unison.overrideAttrs {
     # Editor stuff isn't at top level
@@ -2067,7 +2199,8 @@
   };
 
   windows-nvim = super.windows-nvim.overrideAttrs {
-    dependencies = with self; [ luaPackages.middleclass animation-nvim ];
+    dependencies = with self; [ middleclass animation-nvim ];
+    nvimRequireCheck = "windows";
   };
 
   wtf-nvim = super.wtf-nvim.overrideAttrs {
@@ -2076,6 +2209,10 @@
 
   YankRing-vim = super.YankRing-vim.overrideAttrs {
     sourceRoot = ".";
+  };
+
+  yazi-nvim = super.yazi-nvim.overrideAttrs {
+    dependencies = with self; [ plenary-nvim ];
   };
 
   YouCompleteMe = super.YouCompleteMe.overrideAttrs {
@@ -2121,7 +2258,6 @@
   // (
   let
     nodePackageNames = [
-      "coc-clangd"
       "coc-cmake"
       "coc-css"
       "coc-docker"
@@ -2143,7 +2279,6 @@
       "coc-metals"
       "coc-pairs"
       "coc-prettier"
-      "coc-pyright"
       "coc-python"
       "coc-r-lsp"
       "coc-rls"

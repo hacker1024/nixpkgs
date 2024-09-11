@@ -1,46 +1,54 @@
 {
   lib,
-  aiohttp,
-  async-timeout,
-  bash,
   buildPythonPackage,
   fetchFromGitHub,
-  freezegun,
+  pythonOlder,
+
+  # build-system
+  poetry-core,
+
+  # buildInputs
+  bash,
+
+  # dependencies
+  aiohttp,
   langchain-core,
   langchain-text-splitters,
   langsmith,
-  lark,
-  numpy,
-  pandas,
-  poetry-core,
   pydantic,
+  pyyaml,
+  requests,
+  sqlalchemy,
+  tenacity,
+  async-timeout,
+
+  # optional-dependencies
+  numpy,
+
+  # tests
+  freezegun,
+  lark,
+  pandas,
   pytest-asyncio,
   pytest-mock,
   pytest-socket,
   pytestCheckHook,
-  pythonOlder,
-  pyyaml,
   requests-mock,
-  requests,
   responses,
-  sqlalchemy,
   syrupy,
-  tenacity,
   toml,
 }:
 
 buildPythonPackage rec {
   pname = "langchain";
-  version = "0.2.9";
+  version = "0.2.16";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "langchain-ai";
     repo = "langchain";
     rev = "refs/tags/langchain==${version}";
-    hash = "sha256-HSr1watEDC28SZTsJWbXGrZsQd0O/wgxmj7pTsxMBOA=";
+    hash = "sha256-8n5eImRXOG/3tN/59Gd2/GpoGpt7P2ABj0T4pJi6xrk=";
   };
 
   sourceRoot = "${src.name}/libs/langchain";
@@ -54,13 +62,16 @@ buildPythonPackage rec {
     langchain-core
     langchain-text-splitters
     langsmith
-    numpy
     pydantic
     pyyaml
     requests
     sqlalchemy
     tenacity
   ] ++ lib.optionals (pythonOlder "3.11") [ async-timeout ];
+
+  optional-dependencies = {
+    numpy = [ numpy ];
+  };
 
   nativeCheckInputs = [
     freezegun

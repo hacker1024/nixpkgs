@@ -4,20 +4,23 @@
   fetchFromGitHub,
   rustPlatform,
   darwin,
+  testers,
+  gitMinimal,
+  serie,
 }:
 
 rustPlatform.buildRustPackage rec {
   pname = "serie";
-  version = "0.1.1";
+  version = "0.3.0";
 
   src = fetchFromGitHub {
     owner = "lusingander";
     repo = "serie";
     rev = "v${version}";
-    hash = "sha256-PlWnkkrn+j6GyyBo6ehszXxDexyW4rjIfpCj1ZARBPc=";
+    hash = "sha256-LjWpWgOInnPL4Ke8Ntk+bEJBljPSEe14RCKzN50JUGA=";
   };
 
-  cargoHash = "sha256-kKOjLLpWmgtfIYWrlX/6SRUy7NOX6A/W/Oy3kMGR3eg=";
+  cargoHash = "sha256-Ynnp7jSnkNHbL98JOXjV6v97IXWwi2HiZC5SkChCRv0=";
 
   buildInputs = lib.optionals stdenv.isDarwin (
     with darwin.apple_sdk.frameworks;
@@ -27,8 +30,9 @@ rustPlatform.buildRustPackage rec {
     ]
   );
 
-  # requires a git repository
-  doCheck = false;
+  nativeCheckInputs = [ gitMinimal ];
+
+  passthru.tests.version = testers.testVersion { package = serie; };
 
   meta = with lib; {
     description = "A rich git commit graph in your terminal, like magic";

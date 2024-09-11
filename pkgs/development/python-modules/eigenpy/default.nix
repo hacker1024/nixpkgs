@@ -13,14 +13,14 @@
 
 buildPythonPackage rec {
   pname = "eigenpy";
-  version = "3.7.0";
+  version = "3.9.0";
   pyproject = false; # Built with cmake
 
   src = fetchFromGitHub {
     owner = "stack-of-tasks";
     repo = "eigenpy";
-    rev = "v${version}";
-    hash = "sha256-D/k/ka500EZch5Ydym2WYtd5vciGkd9rdBUSjTsZ0w4=";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-fJLX3ZhcgevXcXkR00fzDh9LtfMwaHsJWQgUexmuKLc=";
   };
 
   outputs = [
