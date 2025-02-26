@@ -62,6 +62,8 @@ buildFHSEnv rec {
       xorg.libXi
       dejavu_fonts
       gnumake
+      # eclipse requirements
+      jre8
     ];
 
   # these libs are installed as 64 bit, plus as 32 bit when multiArch is true
@@ -92,6 +94,8 @@ buildFHSEnv rec {
     progs_to_wrap=(
       "${unwrapped}"/quartus/bin/*
       "${unwrapped}"/quartus/sopc_builder/bin/qsys-{generate,edit,script}
+      "${unwrapped}"/nios2eds/nios2_command_shell.sh
+      "${unwrapped}"/nios2eds/bin/*/*
     )
 
     wrapper=$out/bin/${pname}
